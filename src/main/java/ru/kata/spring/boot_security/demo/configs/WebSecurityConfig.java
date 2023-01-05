@@ -41,6 +41,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
 //                .antMatchers("/")
 //                .permitAll()
+//                .and()
+//                .csrf().disable() // for postman
+//                .formLogin().disable(); // for postman
                 .anyRequest().authenticated()
 
                 .and()

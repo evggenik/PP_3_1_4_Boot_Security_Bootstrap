@@ -27,6 +27,7 @@ public class AdminController {
         this.myUserService = myUserService;
         this.rolesService = rolesService;
     }
+
     @GetMapping("/admin")
     public String getUserName(Principal principal, Model model) {
         UserEntity loggedInUser = myUserService.findByUserName(principal.getName());

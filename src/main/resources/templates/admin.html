@@ -180,16 +180,22 @@
                                                                     <div class="form-group">
                                                                         <label for="formGroupRoles"
                                                                                class="d-flex justify-content-center mb-0 font-weight-bold">Role</label>
-                                                                        <select required
+                                                                        <select
                                                                                 class="form-select form-control form-control-sm w-50 mx-auto"
                                                                                 multiple aria-label="Small select"
                                                                                 th:name="roles"
                                                                                 id="formGroupRoles">
-                                                                            <option th:each="role : ${roleList}"
-
+                                                                            <th:block th:each="role : ${users_roles}">
+                                                                                <option th:if="${user.roles.contains(role)}"
+                                                                                    selected
                                                                                     th:value="${role.id}"
                                                                                     th:text="${role.name}">Role
-                                                                            </option>
+                                                                                </option>
+                                                                                <option th:unless="${user.roles.contains(role)}"
+                                                                                        th:value="${role.id}"
+                                                                                        th:text="${role.name}">
+                                                                                </option>
+                                                                            </th:block>
                                                                         </select>
                                                                     </div>
                                                                 </div>

@@ -51,9 +51,6 @@ public class MyUserService {
         return roleRepository.findAll();
     }
 
-//    public void changeUser(UserEntity user) {
-//        userRepository.saveAndFlush(user);
-//    }
 
 }
 
